@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <head>
+		<title>Student Performance in Exams</title>
+		<meta charset = "UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	</head>
+
+
+</head>
+
+<body>
+ <div class="container">
+	<h1>Student Performance in Exams</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+     <div>
+      <form action="{{ url_for('y_predict')}}" method="post">
+        <div
+          style="
+            display: flex;
+            padding: 50px 0px;
+            justify-content: flex-start;
+            align-items: center;
+          "
+        >
+          <div>
+            <input
+              type="text"
+              name="Math score"
+              placeholder="Math Score"
+              required="required"
+            />
+          </div>
+          <div style="margin: 0px 0px 0px 20px">
+            <input
+              type="text"
+              name="Reading score"
+              placeholder="Reading Score"
+              required="required"
+            />
+          </div>
+
+          <div style="margin: 0px 0px 0px 20px">
+            <input
+              type="text"
+              name="Writing score"
+              placeholder="Writing Score"
+              required="required"
+            />
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">
+          Predict
+        </button>
+      </form>
+    </div>
+    
+    </form>
+   <h><strong>the predicted value is</strong></h>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
+
